@@ -35,7 +35,7 @@ sudo mkdir -p /lib/firmware/edid
 
 cat "$EDID_SYS" > "$TMP_EDID"
 
-# Patch width (byte 0x15) and height (byte 0x16)
+# Patch width (byte 21 (0x15)) and height (byte 22 (0x16))
 printf "%02x" "$width_cm"  | xxd -r -p | dd of="$TMP_EDID" bs=1 seek=21 count=1 conv=notrunc status=none
 printf "%02x" "$height_cm" | xxd -r -p | dd of="$TMP_EDID" bs=1 seek=22 count=1 conv=notrunc status=none
 
