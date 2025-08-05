@@ -1,5 +1,5 @@
 # fix_edid
-This is a script that fixes the edid data on touchscreen monitors that are incorrectly reporting screen size to the Squeekboard on screen keyboard for the Raspberry Pi 5 causing that keyboard display to be unusably tiny.
+This is a script that fixes the edid data on touchscreen monitors that are incorrectly reporting screen size to the Squeekboard on-screen keyboard for the Raspberry Pi 5 causing that keyboard display to be unusably tiny. The issue is described here: https://github.com/raspberrypi-ui/squeekboard/issues/3
 
 It reads the current edid, makes the edits, calculates the checksums, saves the custom edid to /lib/firmware/edid/, then adds the appropriate code to /boot/firmware/cmdline.txt and updates initramfs. Reboot to see the changes.
 
